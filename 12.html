@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Something I Need to Tell You 💌</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd6e7,
+                    #ffeef5
+                );
+
+            overflow: hidden;
+        }
+
+        .container {
+
+            width: 90%;
+            max-width: 620px;
+
+            background: white;
+
+            padding: 40px 30px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.15);
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .emoji {
+
+            font-size: 65px;
+
+            margin-bottom: 15px;
+        }
+
+        h1 {
+
+            color: #ff4f81;
+
+            margin-bottom: 15px;
+        }
+
+        p {
+
+            color: #555;
+
+            font-size: 18px;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+        button {
+
+            border: none;
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            margin: 8px;
+
+            transition:
+                transform 0.25s,
+                font-size 0.25s;
+        }
+
+        .main-btn {
+
+            background: #ff4f81;
+
+            color: white;
+        }
+
+        .main-btn:hover {
+
+            transform: scale(1.08);
+
+            background: #ff2f6d;
+        }
+
+        .opposite-btn {
+
+            background: #eeeeee;
+
+            color: #555;
+
+            position: relative;
+        }
+
+        .hidden {
+
+            display: none;
+        }
+
+        textarea {
+
+            width: 90%;
+
+            height: 180px;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            border: 2px solid #ffc1d4;
+
+            outline: none;
+
+            font-size: 16px;
+
+            resize: none;
+
+            margin: 10px 0;
+        }
+
+        textarea:focus {
+
+            border-color: #ff4f81;
+        }
+
+        .letter {
+
+            background: #fff7fa;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            border: 2px dashed #ff9fbd;
+
+            margin-top: 20px;
+        }
+
+        .signature {
+
+            margin-top: 20px;
+
+            color: #ff4f81;
+
+            font-weight: bold;
+        }
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -20px;
+
+            font-size: 25px;
+
+            animation:
+                float 5s linear forwards;
+
+            z-index: 1;
+        }
+
+        @keyframes float {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- SCREEN 1 -->
+
+    <div id="screen1">
+
+        <div class="emoji">
+            😳
+        </div>
+
+        <h1>
+            I have something to tell you.
+        </h1>
+
+        <p>
+            Don't worry, dili ni bad news. 😂
+        </p>
+
+        <p>
+            Actually...
+            medyo embarrassing ni.
+        </p>
+
+        <button
+            class="main-btn"
+            onclick="goTo(1,2)">
+
+            Sige, unsa na?
+
+        </button>
+
+        <button
+            class="opposite-btn"
+            onmouseover="runAway(this)"
+            onclick="makeBigger(this)">
+
+            Sorry, I dont have time for this! 😭
+
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 2: CONFESSION -->
+
+    <div id="screen2" class="hidden">
+
+
+
+        <h1>
+            Okay... serious na.
+        </h1>
+
+        <p>
+            I've actually been wanting to tell you this.
+        </p>
+
+        <p>
+            And instead of saying it normally...
+        </p>
+
+        <p>
+            I made this.
+            😭😂
+        </p>
+
+        <button
+            class="main-btn"
+            onclick="goTo(2,3)">
+
+            Tell me already 💌
+
+        </button>
+
+        <button
+            class="opposite-btn"
+            onmouseover="runAway(this)"
+            onclick="makeBigger(this)">
+
+            Never mind, I'm leaving 🏃
+
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 3: CONFESSION -->
+
+    <div id="screen3" class="hidden">
+
+
+        <div class="letter">
+
+            <p>
+                I like you.
+            </p>
+
+            <p>
+                There.
+                Nasulti na gyud nako. 😭
+            </p>
+
+            <p>
+                I don't know exactly when it happened,
+                pero somewhere along the way,
+                I started enjoying being with you, youre so nice,
+                and i love the way you are,
+                and looking forward to seeing you.
+                maybe someday we can be more close to each other.
+
+            </p>
+
+            <p>
+                Somehow,
+                nakasulod ka sa akong thoughts
+                without even paying rent. 😂
+            </p>
+
+            <p>
+                So yeah...
+            </p>
+
+            <p>
+                <strong>
+                    I like you. ❤️
+                </strong>
+            </p>
+
+            <p>
+                I'm not expecting you to feel the same way.
+            </p>
+
+            <p>
+                I just wanted to be honest with you.
+            </p>
+
+            <div class="signature">
+
+                — From someone who finally
+                got enough courage to say it hehe
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <button
+            class="main-btn"
+            onclick="goTo(3,4)">
+
+            Thank you for telling me.
+
+        </button>
+
+        <button
+            class="opposite-btn"
+            onmouseover="runAway(this)"
+            onclick="makeBigger(this)">
+
+            Sorry, but I dont have time for these things!
+
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 4: HER REACTION -->
+
+    <div id="screen4" class="hidden">
+
+        <div class="emoji">
+            🤔
+        </div>
+
+        <h1>
+            So... looking forward to know you more.
+        </h1>
+
+        <p>
+            No pressure ha.
+        </p>
+
+        <p>
+           I just wanted be honest with you and i dont expect you to feel the same way.
+           
+        </p>
+
+        <button
+            class="main-btn"
+            onclick="goTo(4,5)">
+
+            We can still be friends, right?
+
+        </button>
+
+        <button
+            class="opposite-btn"
+            onmouseover="runAway(this)"
+            onclick="makeBigger(this)">
+
+            Sorry,but I dont have time for these things!
+
+        </button>
+
+    </div>
+
+
+    <!-- SCREEN 5: HER MESSAGE -->
+
+    <!-- SCREEN 5: HER MESSAGE -->
+
+<div id="screen5" class="hidden">
+
+    <div class="emoji">
+        💌
+    </div>
+
+    <h1>
+        Your message
+    </h1>
+
+    <p>
+        Just say whatever you want.
+    </p>
+
+    <p>
+        No pressure.
+        Walay wrong answer. ❤️
+    </p>
+
+    <form
+        action="https://formspree.io/f/xqpaqnge"
+        method="POST"
+        onsubmit="sendMessage(event)"
+    >
+
+        <input
+            type="hidden"
+            name="_subject"
+            value="Someone responded to my confession website 💌"
+        >
+
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message here... 💭"
+            required>
+        </textarea>
+
+        <br>
+
+        <button
+            type="submit"
+            class="main-btn">
+
+            Send 💌
+
+        </button>
+
+    </form>
+
+    <button
+
+        class="opposite-btn"
+        onmouseover="runAway(this)"
+        onclick="makeBigger(this)">
+
+        Dili kooo
+
+    </button>
+
+</div>
+
+
+    <!-- SCREEN 6 -->
+
+    <div id="screen6" class="hidden">
+
+        <div class="emoji">
+            🥹❤️
+        </div>
+
+        <h1>
+            Thank you.
+        </h1>
+
+        <p>
+            Thank you.....
+        </p>
+
+        <p>
+            Whatever your answer is,
+            I appreciate you taking the time
+            to read all of this.
+        </p>
+
+        <p>
+            And yes...
+           Youre beautiful in your own way..❤️
+        </p>
+
+        <p>
+            <strong>
+                Take care always. ❤️
+            </strong>
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+    /* CHANGE SCREEN */
+
+    function goTo(current, next) {
+
+        document
+            .getElementById("screen" + current)
+            .classList.add("hidden");
+
+        document
+            .getElementById("screen" + next)
+            .classList.remove("hidden");
+
+    }
+
+
+    /* RUN AWAY */
+
+    function runAway(button) {
+
+        const x =
+            Math.random() * 300 - 150;
+
+        const y =
+            Math.random() * 200 - 100;
+
+        button.style.transform =
+            `translate(${x}px, ${y}px)`;
+
+    }
+
+
+    /* GET BIGGER */
+
+    function makeBigger(button) {
+
+        let size =
+            parseFloat(
+                button.dataset.size || 16
+            );
+
+        size += 4;
+
+        button.dataset.size =
+            size;
+
+        button.style.fontSize =
+            size + "px";
+
+
+        if (size < 35) {
+
+            button.innerHTML =
+                "Okay fine 😭";
+
+        } else {
+
+            button.innerHTML =
+                "WHY ARE YOU STILL CLICKING ME 😭😂";
+
+        }
+
+    }
+
+
+    /* SEND MESSAGE */
+
+    function sendMessage() {
+
+        const message =
+            document
+            .getElementById("message")
+            .value
+            .trim();
+
+
+        if (message === "") {
+
+            alert(
+                "Write something first 😭"
+            );
+
+            return;
+
+        }
+
+
+        /*
+            This currently only shows
+            the thank-you screen.
+
+            To actually receive her message,
+            connect this form to Formspree,
+            Firebase, or another database.
+        */
+
+
+        goTo(5,6);
+
+        createHearts();
+
+    }
+
+
+    /* HEARTS */
+
+    function createHearts() {
+
+        setInterval(() => {
+
+            const heart =
+                document.createElement("div");
+
+            heart.classList.add("heart");
+
+            heart.innerHTML =
+                ["❤️", "💗", "💕", "💖", "💘"]
+                [
+                    Math.floor(
+                        Math.random() * 5
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 6000);
+
+        }, 400);
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
+
