@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Something I Need to Tell You 💌</title>
+    <title>Something I Need to Tell You</title>
 
     <style>
 
@@ -27,190 +27,408 @@
             align-items: center;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #ffd6e7,
-                    #ffeef5
-                );
+                radial-gradient(
+                    circle at top left,
+                    #25204a,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #172d46,
+                    transparent 40%
+                ),
+                #090b12;
+
+            color: #eeeeee;
 
             overflow: hidden;
         }
 
+
+        /* MAIN CONTAINER */
+
         .container {
 
-            width: 90%;
-            max-width: 620px;
+            width: 92%;
+            max-width: 680px;
 
-            background: white;
+            max-height: 90vh;
 
-            padding: 40px 30px;
+            padding: 45px 40px;
 
-            border-radius: 25px;
+            background: rgba(20, 23, 34, 0.88);
 
-            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 24px;
 
             box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.15);
+                0 30px 80px rgba(0,0,0,0.55),
+                inset 0 1px rgba(255,255,255,0.05);
+
+            backdrop-filter: blur(18px);
 
             position: relative;
 
-            z-index: 2;
+            overflow: hidden;
         }
 
-        .emoji {
 
-            font-size: 65px;
+        /* TOP LINE */
 
-            margin-bottom: 15px;
+        .container::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 15%;
+
+            width: 70%;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #8b7cff,
+                    transparent
+                );
         }
 
-        h1 {
 
-            color: #ff4f81;
+        /* SCREENS */
 
-            margin-bottom: 15px;
+        .screen {
+
+            animation: fadeIn 0.5s ease;
         }
 
-        p {
-
-            color: #555;
-
-            font-size: 18px;
-
-            line-height: 1.6;
-
-            margin-bottom: 20px;
-        }
-
-        button {
-
-            border: none;
-
-            padding: 14px 25px;
-
-            border-radius: 30px;
-
-            font-size: 16px;
-
-            cursor: pointer;
-
-            margin: 8px;
-
-            transition:
-                transform 0.25s,
-                font-size 0.25s;
-        }
-
-        .main-btn {
-
-            background: #ff4f81;
-
-            color: white;
-        }
-
-        .main-btn:hover {
-
-            transform: scale(1.08);
-
-            background: #ff2f6d;
-        }
-
-        .opposite-btn {
-
-            background: #eeeeee;
-
-            color: #555;
-
-            position: relative;
-        }
 
         .hidden {
 
             display: none;
         }
 
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* TEXT */
+
+        h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 18px;
+
+            color: #ffffff;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        p {
+
+            color: #aeb3c2;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+        }
+
+
+        .small-text {
+
+            color: #777d8e;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* BUTTONS */
+
+        button {
+
+            border: none;
+
+            padding: 13px 24px;
+
+            border-radius: 12px;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            margin: 6px;
+
+            transition:
+                0.25s ease;
+
+        }
+
+
+        .main-btn {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c6cff,
+                    #5d8cff
+                );
+
+            color: white;
+
+            box-shadow:
+                0 8px 25px
+                rgba(108, 94, 255, 0.25);
+        }
+
+
+        .main-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(108, 94, 255, 0.4);
+        }
+
+
+        .opposite-btn {
+
+            background: rgba(255,255,255,0.05);
+
+            color: #8e94a5;
+
+            border: 1px solid
+                rgba(255,255,255,0.08);
+
+            position: relative;
+        }
+
+
+        .opposite-btn:hover {
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+
+        /* CONFESSION */
+
+        .letter {
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border: 1px solid
+                rgba(255,255,255,0.08);
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            margin-top: 15px;
+
+            max-height: 52vh;
+
+            overflow-y: auto;
+
+            text-align: left;
+
+            scrollbar-width: thin;
+
+            scrollbar-color:
+                #555b70 transparent;
+        }
+
+
+        .letter p {
+
+            margin-bottom: 20px;
+        }
+
+
+        .letter strong {
+
+            color: #ffffff;
+
+            font-size: 20px;
+        }
+
+
+        .signature {
+
+            margin-top: 30px;
+
+            color: #8d82ff;
+
+            font-weight: bold;
+
+            line-height: 1.7;
+        }
+
+
+        /* TEXTAREA */
+
         textarea {
 
-            width: 90%;
+            width: 100%;
 
             height: 180px;
 
-            padding: 15px;
+            padding: 16px;
 
-            border-radius: 15px;
+            border-radius: 14px;
 
-            border: 2px solid #ffc1d4;
+            border: 1px solid
+                rgba(255,255,255,0.1);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color: white;
 
             outline: none;
 
             font-size: 16px;
 
-            resize: none;
+            resize: vertical;
 
-            margin: 10px 0;
+            margin: 15px 0;
         }
+
+
+        textarea::placeholder {
+
+            color: #666c7c;
+        }
+
 
         textarea:focus {
 
-            border-color: #ff4f81;
+            border-color: #7569ff;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(117,105,255,0.1);
         }
 
-        .letter {
 
-            background: #fff7fa;
+        /* LOADING */
 
-            padding: 25px;
+        .loading {
 
-            border-radius: 18px;
+            display: none;
 
-            border: 2px dashed #ff9fbd;
+            color: #858b9d;
 
-            margin-top: 20px;
+            margin-top: 15px;
+
+            font-size: 14px;
         }
 
-        .signature {
 
-            margin-top: 20px;
+        /* DECORATION */
 
-            color: #ff4f81;
-
-            font-weight: bold;
-        }
-
-        .heart {
+        .glow {
 
             position: fixed;
 
-            bottom: -20px;
+            width: 250px;
 
-            font-size: 25px;
+            height: 250px;
 
-            animation:
-                float 5s linear forwards;
+            border-radius: 50%;
 
-            z-index: 1;
+            background:
+                rgba(108,92,255,0.08);
+
+            filter: blur(60px);
+
+            pointer-events: none;
         }
 
-        @keyframes float {
 
-            0% {
+        .glow.one {
 
-                transform:
-                    translateY(0)
-                    rotate(0deg);
+            top: -100px;
+            left: -100px;
+        }
 
-                opacity: 1;
+
+        .glow.two {
+
+            bottom: -100px;
+            right: -100px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                padding: 32px 22px;
+
+                max-height: 92vh;
             }
 
-            100% {
 
-                transform:
-                    translateY(-110vh)
-                    rotate(360deg);
+            h1 {
 
-                opacity: 0;
+                font-size: 27px;
             }
+
+
+            p {
+
+                font-size: 16px;
+            }
+
+
+            .letter {
+
+                padding: 22px;
+
+                max-height: 55vh;
+            }
+
+
+            button {
+
+                width: 100%;
+
+                margin: 6px 0;
+            }
+
         }
 
     </style>
@@ -221,471 +439,514 @@
 <body>
 
 
-<div class="container">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
 
 
-    <!-- SCREEN 1 -->
+    <div class="container">
 
-    <div id="screen1">
 
-        <div class="emoji">
-            😳
+        <!-- SCREEN 1 -->
+
+        <div id="screen1" class="screen">
+
+            <p class="small-text">
+                I have somethong to tell you.
+            </p>
+            <p>
+                Don't worry, dili ni bad news.
+            </p>
+
+            <p>
+                Actually...
+                medyo embarrassing ni.
+            </p>
+
+
+            <button
+                class="main-btn"
+                onclick="goTo(1,2)">
+
+                Sige, unsa na?
+
+            </button>
+
+
+            <button
+                class="opposite-btn"
+                onmouseover="runAway(this)"
+                onclick="makeBigger(this)">
+
+                Sorry, I don't have time for this.
+
+            </button>
+
         </div>
 
-        <h1>
-            I have something to tell you.
-        </h1>
-
-        <p>
-            Don't worry, dili ni bad news. 😂
-        </p>
-
-        <p>
-            Actually...
-            medyo embarrassing ni.
-        </p>
-
-        <button
-            class="main-btn"
-            onclick="goTo(1,2)">
-
-            Sige, unsa na?
-
-        </button>
-
-        <button
-            class="opposite-btn"
-            onmouseover="runAway(this)"
-            onclick="makeBigger(this)">
-
-            Sorry, I dont have time for this! 😭
-
-        </button>
-
-    </div>
 
 
-    <!-- SCREEN 2: CONFESSION -->
+        <!-- SCREEN 2 -->
 
-    <div id="screen2" class="hidden">
+        <div id="screen2" class="screen hidden">
 
-
-
-        <h1>
-            Okay... serious na.
-        </h1>
-
-        <p>
-            I've actually been wanting to tell you this.
-        </p>
-
-        <p>
-            And instead of saying it normally...
-        </p>
-
-        <p>
-            I made this.
-            😭😂
-        </p>
-
-        <button
-            class="main-btn"
-            onclick="goTo(2,3)">
-
-            Tell me already 💌
-
-        </button>
-
-        <button
-            class="opposite-btn"
-            onmouseover="runAway(this)"
-            onclick="makeBigger(this)">
-
-            Never mind, I'm leaving 🏃
-
-        </button>
-
-    </div>
-
-
-    <!-- SCREEN 3: CONFESSION -->
-
-    <div id="screen3" class="hidden">
-
-
-        <div class="letter">
-
-            <p>
-                I like you.
+            <p class="small-text">
+                Before we continue...
             </p>
 
             <p>
-                There.
-                Nasulti na gyud nako. 😭
+                I've actually been wanting
+                to tell you this for a while.
             </p>
 
             <p>
-                I don't know exactly when it happened,
-                pero somewhere along the way,
-                I started enjoying being with you, youre so nice,
-                and i love the way you are,
-                and looking forward to seeing you.
-                maybe someday we can be more close to each other.
-
+                And instead of saying it normally...
             </p>
 
             <p>
-                Somehow,
-                nakasulod ka sa akong thoughts
-                without even paying rent. 😂
+                I made this.
+            </p>
+
+
+            <button
+                class="main-btn"
+                onclick="goTo(2,3)">
+
+                Tell me 
+
+            </button>
+
+
+            <button
+                class="opposite-btn"
+                onmouseover="runAway(this)"
+                onclick="makeBigger(this)">
+
+                Never mind, I'm leaving.
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SCREEN 3 -->
+
+        <div id="screen3" class="screen hidden">
+
+            <p class="small-text">
+               Here we go...
+            </p>
+
+            <h1>
+                I want to be honest with you.
+            </h1>
+
+
+            <div class="letter">
+
+                <p>
+                    I like you.
+                
+                    There.
+                    Nasulti na gyud nako.
+                </p>
+
+                <p>
+                    I don't know exactly when it happened,
+                    pero somewhere along the way, I started
+                    enjoying being around you.
+                </p>
+
+                <p>
+                    You're genuinely nice, and 
+                    I like the way you are. I 
+                    started looking forward to 
+                    seeing you and talking to you.
+                </p>
+
+                <p>
+                    Maybe someday,
+                    we can become closer to each other.
+                </p>
+
+                <p>
+                    Somehow,
+                    nakasulod ka sa akong thoughts
+                    without even paying rent.
+                </p>
+
+                <p>
+                    So yeah...
+                </p>
+
+                <p>
+                    <strong>
+                        I like you.
+                    </strong>
+                </p>
+
+                <p>
+                    I'm not expecting you to feel
+                    the same way.
+                </p>
+
+                <p>
+                    I just wanted to be honest with you
+                    instead of keeping it to myself.
+                </p>
+
+                <div class="signature">
+
+                    — From someone who finally
+                    got enough courage to say it.
+
+                
+
+                </div>
+
+            </div>
+
+
+            <br>
+
+
+            <button
+                class="main-btn"
+                onclick="goTo(3,4)">
+
+                Thank you for telling me.
+
+            </button>
+
+
+            <button
+                class="opposite-btn"
+                onmouseover="runAway(this)"
+                onclick="makeBigger(this)">
+
+                Sorry, I don't have time for this.
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SCREEN 4 -->
+
+        <div id="screen4" class="screen hidden">
+
+            <p class="small-text">
+               
+            </p>
+
+            <h1>
+                So... I'd like to know you more.
+            </h1>
+
+            <p>
+                No pressure ha.
             </p>
 
             <p>
-                So yeah...
+                I just wanted to be honest with you,
+                and i can say that your different, 
+                You are Uniqueee..
             </p>
 
             <p>
-                <strong>
-                    I like you. ❤️
-                </strong>
+                Whatever you think,
+                you can just tell me honestly.
+            </p>
+
+
+            <button
+                class="main-btn"
+                onclick="goTo(4,5)">
+
+                We can still be friends, right?
+
+            </button>
+
+
+            <button
+                class="opposite-btn"
+                onmouseover="runAway(this)"
+                onclick="makeBigger(this)">
+
+                Sorry, I don't have time for this.
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SCREEN 5 -->
+
+        <div id="screen5" class="screen hidden">
+
+            <p class="small-text">
+                Your turn.
+            </p>
+
+            <h1>
+                Your message.
+            </h1>
+
+            <p>
+                Just say whatever you want.
             </p>
 
             <p>
-                I'm not expecting you to feel the same way.
+                No pressure.
+                Walay wrong answer.
             </p>
 
-            <p>
-                I just wanted to be honest with you.
-            </p>
 
-            <div class="signature">
+            <form
+                id="messageForm"
+                action="https://formspree.io/f/xqpaqnge"
+                method="POST">
 
-                — From someone who finally
-                got enough courage to say it hehe
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Someone responded to my confession website">
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message here..."
+                    required></textarea>
+
+
+                <button
+                    type="submit"
+                    class="main-btn">
+
+                    Send message
+
+                </button>
+
+            </form>
+
+
+            <div
+                id="loading"
+                class="loading">
+
+                Sending your message...
 
             </div>
 
         </div>
 
-        <br>
-
-        <button
-            class="main-btn"
-            onclick="goTo(3,4)">
-
-            Thank you for telling me.
-
-        </button>
-
-        <button
-            class="opposite-btn"
-            onmouseover="runAway(this)"
-            onclick="makeBigger(this)">
-
-            Sorry, but I dont have time for these things!
-
-        </button>
-
-    </div>
 
 
-    <!-- SCREEN 4: HER REACTION -->
+        <!-- SCREEN 6 -->
 
-    <div id="screen4" class="hidden">
+        <div id="screen6" class="screen hidden">
 
-        <div class="emoji">
-            🤔
+            <p class="small-text">
+                Message received.
+            </p>
+
+            <h1>
+                Thank you.
+            </h1>
+
+            <p>
+                Thank you for taking the time
+                to read everything and for
+                giving me an honest response.
+            </p>
+
+            <p>
+                Whatever your answer is,
+                I genuinely appreciate it.
+            </p>
+
+            <p>
+                And yes...
+                you're beautiful in your own way.
+            </p>
+
+            <p>
+                <strong>
+                    Take care always.
+                </strong>
+            </p>
+
         </div>
 
-        <h1>
-            So... looking forward to know you more.
-        </h1>
-
-        <p>
-            No pressure ha.
-        </p>
-
-        <p>
-           I just wanted be honest with you and i dont expect you to feel the same way.
-           
-        </p>
-
-        <button
-            class="main-btn"
-            onclick="goTo(4,5)">
-
-            We can still be friends, right?
-
-        </button>
-
-        <button
-            class="opposite-btn"
-            onmouseover="runAway(this)"
-            onclick="makeBigger(this)">
-
-            Sorry,but I dont have time for these things!
-
-        </button>
 
     </div>
 
 
-    <!-- SCREEN 5: HER MESSAGE -->
 
-    <!-- SCREEN 5: HER MESSAGE -->
+    <script>
 
-<div id="screen5" class="hidden">
 
-    <div class="emoji">
-        💌
-    </div>
+        /* CHANGE SCREEN */
 
-    <h1>
-        Your message
-    </h1>
+        function goTo(current, next) {
 
-    <p>
-        Just say whatever you want.
-    </p>
-
-    <p>
-        No pressure.
-        Walay wrong answer. ❤️
-    </p>
-
-    <form
-        action="https://formspree.io/f/xqpaqnge"
-        method="POST"
-        onsubmit="sendMessage(event)"
-    >
-
-        <input
-            type="hidden"
-            name="_subject"
-            value="Someone responded to my confession website 💌"
-        >
-
-        <textarea
-            id="message"
-            name="message"
-            placeholder="Write your message here... 💭"
-            required>
-        </textarea>
-
-        <br>
-
-        <button
-            type="submit"
-            class="main-btn">
-
-            Send 💌
-
-        </button>
-
-    </form>
-
-    <button
-
-        class="opposite-btn"
-        onmouseover="runAway(this)"
-        onclick="makeBigger(this)">
-
-        Dili kooo
-
-    </button>
-
-</div>
-
-
-    <!-- SCREEN 6 -->
-
-    <div id="screen6" class="hidden">
-
-        <div class="emoji">
-            🥹❤️
-        </div>
-
-        <h1>
-            Thank you.
-        </h1>
-
-        <p>
-            Thank you.....
-        </p>
-
-        <p>
-            Whatever your answer is,
-            I appreciate you taking the time
-            to read all of this.
-        </p>
-
-        <p>
-            And yes...
-           Youre beautiful in your own way..❤️
-        </p>
-
-        <p>
-            <strong>
-                Take care always. ❤️
-            </strong>
-        </p>
-
-    </div>
-
-
-</div>
-
-
-
-<script>
-
-
-    /* CHANGE SCREEN */
-
-    function goTo(current, next) {
-
-        document
-            .getElementById("screen" + current)
-            .classList.add("hidden");
-
-        document
-            .getElementById("screen" + next)
-            .classList.remove("hidden");
-
-    }
-
-
-    /* RUN AWAY */
-
-    function runAway(button) {
-
-        const x =
-            Math.random() * 300 - 150;
-
-        const y =
-            Math.random() * 200 - 100;
-
-        button.style.transform =
-            `translate(${x}px, ${y}px)`;
-
-    }
-
-
-    /* GET BIGGER */
-
-    function makeBigger(button) {
-
-        let size =
-            parseFloat(
-                button.dataset.size || 16
-            );
-
-        size += 4;
-
-        button.dataset.size =
-            size;
-
-        button.style.fontSize =
-            size + "px";
-
-
-        if (size < 35) {
-
-            button.innerHTML =
-                "Okay fine 😭";
-
-        } else {
-
-            button.innerHTML =
-                "WHY ARE YOU STILL CLICKING ME 😭😂";
-
-        }
-
-    }
-
-
-    /* SEND MESSAGE */
-
-    function sendMessage() {
-
-        const message =
             document
-            .getElementById("message")
-            .value
-            .trim();
+                .getElementById("screen" + current)
+                .classList.add("hidden");
 
-
-        if (message === "") {
-
-            alert(
-                "Write something first 😭"
-            );
-
-            return;
+            document
+                .getElementById("screen" + next)
+                .classList.remove("hidden");
 
         }
 
 
-        /*
-            This currently only shows
-            the thank-you screen.
 
-            To actually receive her message,
-            connect this form to Formspree,
-            Firebase, or another database.
-        */
+        /* RUN AWAY BUTTON */
 
+        function runAway(button) {
 
-        goTo(5,6);
+            const x =
+                Math.random() * 250 - 125;
 
-        createHearts();
+            const y =
+                Math.random() * 150 - 75;
 
-    }
+            button.style.transform =
+                `translate(${x}px, ${y}px)`;
 
-
-    /* HEARTS */
-
-    function createHearts() {
-
-        setInterval(() => {
-
-            const heart =
-                document.createElement("div");
-
-            heart.classList.add("heart");
-
-            heart.innerHTML =
-                ["❤️", "💗", "💕", "💖", "💘"]
-                [
-                    Math.floor(
-                        Math.random() * 5
-                    )
-                ];
-
-            heart.style.left =
-                Math.random() * 100 + "vw";
-
-            heart.style.animationDuration =
-                (3 + Math.random() * 3) + "s";
-
-            document.body.appendChild(heart);
+        }
 
 
-            setTimeout(() => {
 
-                heart.remove();
+        /* MAKE BUTTON BIGGER */
 
-            }, 6000);
+        function makeBigger(button) {
 
-        }, 400);
+            let size =
+                parseFloat(
+                    button.dataset.size || 15
+                );
 
-    }
+            size += 3;
+
+            button.dataset.size = size;
+
+            button.style.fontSize =
+                size + "px";
 
 
-</script>
+            if (size < 30) {
+
+                button.innerHTML =
+                    "Okay fine.";
+
+            } else {
+
+                button.innerHTML =
+                    "Okay, okay...";
+
+            }
+
+        }
+
+
+
+        /* FORM SUBMISSION */
+
+        const form =
+            document.getElementById("messageForm");
+
+
+        form.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const message =
+                    document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+                if (message === "") {
+
+                    return;
+
+                }
+
+
+                const loading =
+                    document.getElementById("loading");
+
+
+                loading.style.display =
+                    "block";
+
+
+                const formData =
+                    new FormData(form);
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            form.action,
+                            {
+                                method: "POST",
+                                body: formData,
+                                headers: {
+                                    "Accept":
+                                        "application/json"
+                                }
+                            }
+                        );
+
+
+                    if (response.ok) {
+
+                        document
+                            .getElementById("screen5")
+                            .classList.add("hidden");
+
+                        document
+                            .getElementById("screen6")
+                            .classList.remove("hidden");
+
+                    } else {
+
+                        alert(
+                            "Something went wrong. Please try again."
+                        );
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    alert(
+                        "Unable to send the message. Please check your internet connection."
+                    );
+
+                }
+
+
+                loading.style.display =
+                    "none";
+
+            }
+        );
+
+    </script>
 
 
 </body>
 
 </html>
-
